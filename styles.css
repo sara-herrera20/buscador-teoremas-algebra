@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+#resultsContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.initial-message {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 20px;
+}
+
+.teorema-card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #4CAF50;
+}
+
+.teorema-card h2 {
+    color: #388E3C;
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.teorema-card p {
+    line-height: 1.6;
+}
+
+.proof-section {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #ddd;
+}
+
+.proof-section h3 {
+    color: #555;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.formula-block {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Para manejar fórmulas muy largas */
+    border: 1px solid #eee;
+    margin: 10px 0;
+}
+
+.formula-block p {
+    margin: 0;
+}
