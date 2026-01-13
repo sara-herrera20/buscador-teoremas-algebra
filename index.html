@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscador de Teoremas - Álgebra Lineal</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$'], ['\\[', '\\]']]
-        }
-      };
-    </script>
-</head>
-<body>
-    <header>
-        <h1>Buscador de Teoremas - Álgebra Lineal</h1>
-    </header>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscador de Teoremas - Álgebra Lineal</title>
 
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Escribe el número del teorema (ej: 1.1) o una palabra clave...">
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Config de MathJax ANTES de cargarlo -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Buscador de Teoremas - Álgebra Lineal</h1>
+    <p>Busca por número (ej. 1.7) o por palabra clave (ej. “inversa”, “determinante”, “cramer”).</p>
+    <span class="stats-badge" id="stats">Cargando...</span>
+  </header>
+
+  <main class="container">
+    <div class="search-wrapper">
+      <div class="search-box">
+        <span class="search-icon">🔎</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder='Escribe el número del teorema (ej: 1.1) o una palabra clave...'
+          autocomplete="off"
+        />
+      </div>
     </div>
 
     <div id="resultsContainer">
-        <p class="initial-message">Comienza a escribir para buscar los teoremas.</p>
+      <p class="initial-message">Comienza a escribir para buscar los teoremas.</p>
     </div>
+  </main>
 
-    <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
