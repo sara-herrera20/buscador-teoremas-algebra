@@ -1,103 +1,101 @@
+/* Variables de diseño */
+:root {
+    --emerald: #10b981;
+    --emerald-dark: #059669;
+    --bg-gray: #f8fafc;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+* { box-sizing: border-box; }
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
     margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-.search-container {
-    display: flex;
-    justify-content: center;
-    padding: 0 20px;
-    margin-bottom: 30px;
-}
-
-#searchInput {
-    width: 100%;
-    max-width: 600px;
-    padding: 12px 20px;
-    border: 2px solid #ddd;
-    border-radius: 25px;
-    font-size: 1.1em;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-#searchInput:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
-}
-
-#resultsContainer {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.initial-message {
-    text-align: center;
-    color: #777;
-    font-style: italic;
-    padding: 20px;
-}
-
-.teorema-card {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #4CAF50;
-}
-
-.teorema-card h2 {
-    color: #388E3C;
-    margin-top: 0;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-.teorema-card p {
     line-height: 1.6;
 }
 
-.proof-section {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px dashed #ddd;
+header {
+    background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.proof-section h3 {
-    color: #555;
-    font-size: 1.1em;
-    margin-bottom: 10px;
+header h1 { margin: 0; font-size: 2.5rem; font-weight: 800; }
+header p { margin: 10px 0 0; opacity: 0.9; font-size: 1.1rem; }
+
+.stats-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    backdrop-filter: blur(5px);
 }
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+
+.search-wrapper { position: sticky; top: 20px; z-index: 100; margin-top: -35px; }
+
+.search-box {
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.search-box:focus-within { border-color: var(--emerald); transform: translateY(-2px); }
+.search-icon { margin-right: 15px; font-size: 1.2rem; }
+#searchInput { width: 100%; padding: 15px 0; border: none; outline: none; font-size: 1.1rem; }
+
+#resultsContainer { margin-top: 40px; }
+
+.initial-message { text-align: center; color: var(--text-light); padding: 60px 20px; font-style: italic; }
+
+.teorema-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid var(--emerald);
+    transition: transform 0.2s;
+}
+
+.teorema-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+.teorema-num { font-weight: 800; color: var(--emerald); font-size: 0.9rem; text-transform: uppercase; }
+.teorema-cat { font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 10px; background: #f1f5f9; color: #475569; }
+
+/* Colores de categorías */
+.cat-matrices { background: #ecfdf5; color: #065f46; }
+.cat-determinantes { background: #eff6ff; color: #1e40af; }
+.cat-espacios { background: #fffbeb; color: #92400e; }
+.cat-independencia { background: #fff1f2; color: #9f1239; }
+
+.teorema-card h2 { margin: 0 0 15px 0; font-size: 1.4rem; color: #0f172a; }
 
 .formula-block {
-    background-color: #f9f9f9;
+    background: #f8fafc;
     padding: 15px;
-    border-radius: 5px;
-    overflow-x: auto; /* Para manejar fórmulas muy largas */
-    border: 1px solid #eee;
-    margin: 10px 0;
+    border-radius: 12px;
+    margin: 15px 0;
+    border: 1px solid #e2e8f0;
+    overflow-x: auto;
 }
 
-.formula-block p {
-    margin: 0;
-}
+.proof-section { margin-top: 20px; padding-top: 20px; border-top: 1px solid #f1f5f9; }
+.proof-section h3 { font-size: 0.8rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin: 0 0 8px 0; }
+.proof-section p { font-size: 0.95rem; font-style: italic; color: #64748b; margin: 0; }
