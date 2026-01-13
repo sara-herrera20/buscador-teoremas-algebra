@@ -1,67 +1,71 @@
-// Estructura de los teoremas con sus propiedades y fórmulas en LaTeX
-// NOTA: Para fórmulas en una línea (inline), usa $formula$. Para fórmulas separadas (display), usa $$formula$$.
+// Base de datos de teoremas
+// ===============================
 const teoremas = [
-    {
-        numero: "Teorema 1.1",
-        nombre: "Sistemas de Ecuaciones Lineales Homogéneas",
-        contenido: "Todo sistema de ecuaciones lineales homogéneas que tiene más incógnitas que ecuaciones tiene infinidad de soluciones.",
-        formulas: [],
-        demostracion: null
-    },
-    {
-        numero: "Teorema 1.2",
-        nombre: "Propiedades de la Traza",
-        contenido: "Si $A$ y $B$ son matrices cuadradas $n\\times n$ y si $k \\in \\mathbb{R}$, entonces:",
-        formulas: [
-            "$$\\mathrm{tr}(A+B) = \\mathrm{tr}(A) + \\mathrm{tr}(B)$$",
-            "$$\\mathrm{tr}(kA) = k\\mathrm{tr}(A)$$"
-        ],
-        demostracion: null
-    },
-    {
-        numero: "Teorema 1.3",
-        nombre: "Propiedades de las Operaciones con Matrices (Parte I)",
-        contenido: "Sea $A, B$ y $C$ matrices cuyos tamaños permiten las operaciones abajo enunciadas y $m, n$ escalares. Entonces se cumple:",
-        formulas: [
-            "$$A+B = B+A$$ (Conmutatividad de la Suma)",
-            "$$A+(B+C) = (A+B)+C$$ (Asociatividad de la Suma)",
-            "$$A(B+C) = AB+AC$$ (Distributividad a la izquierda)",
-            "$$(A+B)C = AC+BC$$ (Distributividad a la derecha)",
-            "$$(m+n)A = mA+nA$$ (Distributividad escalar)",
-            "$$m(A+B) = mA+mB$$ (Distributividad escalar)",
-            "$$(mA)B = A(mB) = mAB$$ (Asociatividad escalar)",
-            "$$m(nA) = (mn)A$$ (Asociatividad escalar)"
-        ],
-        demostracion: null
-    },
-    {
-        numero: "Teorema 1.4",
-        nombre: "Propiedades de las Matrices Cero",
-        contenido: "Propiedades de las matrices cero:",
-        formulas: [
-            "$$A+0 = A$$",
-            "$$A+(-A) = A-A = 0$$",
-            "$$0A = 0$$",
-            "$$A0 = 0$$"
-        ],
-        demostracion: null
-    },
-    {
-        numero: "Teorema 1.5",
-        nombre: "Forma Escalonada Reducida de una Matriz Cuadrada",
-        contenido: "Sea $A$ una matriz cuadrada $n \\times n$ y sea $R$ la forma escalonada reducida de $A$, entonces o $R$ tiene por lo menos un renglón de ceros o $R$ es la matriz identidad $I_n$.",
-        formulas: [],
-        demostracion: "Si $R$ no tiene renglones de ceros al momento de recorrer la matriz $R$ de arriba hacia abajo, los unos principales se encuentran en la diagonal principal, de modo que $R$ es la matriz identidad."
-    },
-    {
-        numero: "Teorema 1.6",
-        nombre: "Unicidad de la Matriz Inversa",
-        contenido: "Sea $A$ una matriz invertible. Si $B$ y $C$ son inversas de $A$, se debe tener que: $C=B$.",
-        formulas: [
-            "Demostración: Como $B$ es una inversa de $A$, $AB = I$ y $BA = I$. Si multiplicamos $AB = I$ por $C$ a la izquierda: $C(AB) = CI$. Por el Teorema 1.3, $C(A)B = C$. Si $C$ también es una inversa de $A$, entonces $CA=I$, por lo que $(CA)B = IB = B$. Sustituyendo, $C=B$."
-        ],
-        demostracion: null // La demostración se incorporó en 'formulas' por su formato
-    },
+  {
+    numero: "Teorema 1.1",
+    nombre: "Sistemas de Ecuaciones Lineales Homogéneas",
+    categoria: "Matrices",
+    contenido: "Todo sistema de ecuaciones lineales homogéneas que tiene más incógnitas que ecuaciones tiene infinidad de soluciones.",
+    formulas: [],
+    demostracion: null
+  },
+  {
+    numero: "Teorema 1.2",
+    nombre: "Propiedades de la Traza",
+    categoria: "Matrices",
+    contenido: "Si $A$ y $B$ son matrices cuadradas $n\\times n$ y si $k \\in \\mathbb{R}$, entonces:",
+    formulas: [
+      "$$\\mathrm{tr}(A+B) = \\mathrm{tr}(A) + \\mathrm{tr}(B)$$",
+      "$$\\mathrm{tr}(kA) = k\\mathrm{tr}(A)$$"
+    ],
+    demostracion: null
+  },
+  {
+    numero: "Teorema 1.3",
+    nombre: "Propiedades de las Operaciones con Matrices (Parte I)",
+    categoria: "Matrices",
+    contenido: "Sea $A, B$ y $C$ matrices cuyos tamaños permiten las operaciones abajo enunciadas y $m, n$ escalares. Entonces se cumple:",
+    formulas: [
+      "$$A+B = B+A$$ (Conmutatividad de la Suma)",
+      "$$A+(B+C) = (A+B)+C$$ (Asociatividad de la Suma)",
+      "$$A(B+C) = AB+AC$$ (Distributividad a la izquierda)",
+      "$$(A+B)C = AC+BC$$ (Distributividad a la derecha)",
+      "$$(m+n)A = mA+nA$$ (Distributividad escalar)",
+      "$$m(A+B) = mA+mB$$ (Distributividad escalar)",
+      "$$(mA)B = A(mB) = mAB$$ (Asociatividad escalar)",
+      "$$m(nA) = (mn)A$$ (Asociatividad escalar)"
+    ],
+    demostracion: null
+  },
+  {
+    numero: "Teorema 1.4",
+    nombre: "Propiedades de las Matrices Cero",
+    categoria: "Matrices",
+    contenido: "Propiedades de las matrices cero:",
+    formulas: [
+      "$$A+0 = A$$",
+      "$$A+(-A) = A-A = 0$$",
+      "$$0A = 0$$",
+      "$$A0 = 0$$"
+    ],
+    demostracion: null
+  },
+  {
+    numero: "Teorema 1.5",
+    nombre: "Forma Escalonada Reducida de una Matriz Cuadrada",
+    categoria: "Matrices",
+    contenido: "Sea $A$ una matriz cuadrada $n \\times n$ y sea $R$ la forma escalonada reducida de $A$, entonces o $R$ tiene por lo menos un renglón de ceros o $R$ es la matriz identidad $I_n$.",
+    formulas: [],
+    demostracion: "Si $R$ no tiene renglones de ceros, al recorrer la matriz $R$ de arriba hacia abajo, los unos principales se encuentran en la diagonal principal, de modo que $R$ es la matriz identidad."
+  },
+  {
+    numero: "Teorema 1.6",
+    nombre: "Unicidad de la Matriz Inversa",
+    categoria: "Matrices",
+    contenido: "Sea $A$ una matriz invertible. Si $B$ y $C$ son inversas de $A$, se debe tener que: $C=B$.",
+    formulas: [],
+    demostracion: "Como $B$ es una inversa de $A$, $AB=I$ y $BA=I$. Multiplicamos $AB=I$ por $C$ a la izquierda: $C(AB)=CI$. Por asociatividad, $(CA)B=C$. Si $C$ es inversa, entonces $CA=I$, así que $(CA)B=IB=B$. Por lo tanto, $C=B$."
+  },
     {
         numero: "Teorema 1.7",
         nombre: "Inversa de una Matriz $2\\times2$",
@@ -351,170 +355,124 @@ const teoremas = [
         demostracion: null
     },
     {
-        numero: "Teorema 2.31",
-        nombre: "Dimensión del Subespacio",
-        categoria: "Independencia y Bases",
-        contenido: "Si $W$ es subespacio de $V$, entonces $\\text{dim}(W) \\leq \\text{dim}(V)$. Si las dimensiones son iguales, $W=V$.",
-        formulas: [],
-        demostracion: null
-    }
+    numero: "Teorema 2.31",
+    nombre: "Dimensión del Subespacio",
+    categoria: "Independencia y Bases",
+    contenido: "Si $W$ es subespacio de $V$, entonces $\\text{dim}(W) \\leq \\text{dim}(V)$. Si las dimensiones son iguales, $W=V$.",
+    formulas: [],
+    demostracion: null
+  }
 ];
 
-const searchInput = document.getElementById('searchInput');
-const resultsContainer = document.getElementById('resultsContainer');
-const statsEl = document.getElementById('stats');
+// ===============================
+// DOM
+// ===============================
+const searchInput = document.getElementById("searchInput");
+const resultsContainer = document.getElementById("resultsContainer");
+const statsEl = document.getElementById("stats");
 
 // Mostrar total de teoremas
 function updateStats() {
-    statsEl.innerText = `${teoremas.length} Teoremas en la base de datos`;
+  if (!statsEl) return;
+  statsEl.innerText = `${teoremas.length} teoremas en la base de datos`;
 }
 
-// Función para asignar color por categoría
+// Clase por categoría (para colores)
 function getCategoryClass(cat) {
-    const maps = {
-        "Matrices": "cat-matrices",
-        "Determinantes": "cat-determinantes",
-        "Espacios Vectoriales": "cat-espacios",
-        "Independencia y Bases": "cat-independencia",
-        "Invertibilidad": "cat-matrices"
-    };
-    return maps[cat] || "";
+  const maps = {
+    "Matrices": "cat-matrices",
+    "Determinantes": "cat-determinantes",
+    "Espacios Vectoriales": "cat-espacios",
+    "Independencia y Bases": "cat-independencia"
+  };
+  return maps[cat] || "";
+}
+
+function normalize(str) {
+  return (str || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, ""); // quita acentos
+}
+
+function renderInitial() {
+  resultsContainer.innerHTML = `
+    <p class="initial-message">
+      Escribe el número del teorema o conceptos clave (ej: "inversa", "cramer") para buscar.
+    </p>
+  `;
+}
+
+function renderNotFound(query) {
+  resultsContainer.innerHTML = `<p class="initial-message">No se encontraron teoremas para "${query}"</p>`;
+}
+
+function typesetMath() {
+  if (window.MathJax && window.MathJax.typesetPromise) {
+    window.MathJax.typesetPromise([resultsContainer]).catch(() => {});
+  }
 }
 
 function search() {
-    const query = searchInput.value.trim().toLowerCase();
-    resultsContainer.innerHTML = '';
+  const queryRaw = searchInput.value.trim();
+  const query = normalize(queryRaw);
 
-    if (query === "") {
-        resultsContainer.innerHTML = `
-            <div class="initial-message">
-                <p>Escribe el número del teorema o conceptos clave (ej: "inversa", "cramer") para buscar.</p>
-            </div>
-        `;
-        return;
-    }
+  resultsContainer.innerHTML = "";
 
-    const filtered = teoremas.filter(t => {
-        const text = `${t.numero} ${t.nombre} ${t.contenido} ${t.categoria}`.toLowerCase();
-        return text.includes(query);
-    });
+  if (!query) {
+    renderInitial();
+    return;
+  }
 
-    if (filtered.length === 0) {
-        resultsContainer.innerHTML = `<p class="initial-message">No se encontraron teoremas para "${query}"</p>`;
-        return;
-    }
+  const filtered = teoremas.filter(t => {
+    const text = normalize(`${t.numero} ${t.nombre} ${t.contenido} ${t.categoria || ""} ${t.demostracion || ""}`);
+    return text.includes(query);
+  });
 
-    filtered.forEach(t => {
-        const card = document.createElement('div');
-        card.className = 'teorema-card';
+  if (filtered.length === 0) {
+    renderNotFound(queryRaw);
+    return;
+  }
 
-        const formulasHTML = t.formulas.map(f => `<div class="formula-block">${f}</div>`).join('');
-        const proofHTML = t.demostracion ? `
-            <div class="proof-section">
-                <h3>Nota / Demostración</h3>
-                <p>${t.demostracion}</p>
-            </div>
-        ` : '';
+  filtered.forEach(t => {
+    const card = document.createElement("div");
+    card.className = "teorema-card";
 
-        card.innerHTML = `
-            <div class="card-header">
-                <span class="teorema-num">${t.numero}</span>
-                <span class="teorema-cat ${getCategoryClass(t.categoria)}">${t.categoria}</span>
-            </div>
-            <h2>${t.nombre}</h2>
-            <p>${t.contenido}</p>
-            ${formulasHTML}
-            ${proofHTML}
-        `;
-        resultsContainer.appendChild(card);
-    });
+    const categoria = t.categoria || "General";
+    const formulasHTML = (t.formulas || [])
+      .map(f => `<div class="formula-block">${f}</div>`)
+      .join("");
 
-    // Indicar a MathJax que re-procese las fórmulas
-    if (window.MathJax && window.MathJax.typesetPromise) {
-        MathJax.typesetPromise([resultsContainer]);
-    }
+    const proofHTML = t.demostracion
+      ? `
+        <div class="proof-section">
+          <h3>Nota / Demostración</h3>
+          <p>${t.demostracion}</p>
+        </div>
+      `
+      : "";
+
+    card.innerHTML = `
+      <div class="card-header">
+        <span class="teorema-num">${t.numero}</span>
+        <span class="teorema-cat ${getCategoryClass(categoria)}">${categoria}</span>
+      </div>
+
+      <h2>${t.nombre}</h2>
+      <p>${t.contenido}</p>
+
+      ${formulasHTML}
+      ${proofHTML}
+    `;
+
+    resultsContainer.appendChild(card);
+  });
+
+  typesetMath();
 }
 
-searchInput.addEventListener('input', search);
-window.onload = () => {
-    updateStats();
-    search();
-};
-];
-
-const searchInput = document.getElementById('searchInput');
-const resultsContainer = document.getElementById('resultsContainer');
-
-// Función para escapar caracteres HTML especiales (útil pero opcional aquí)
-function escapeHTML(str) {
-    return str.replace(/[&<>"']/g, function(m) {
-        return ({
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#39;'
-        })[m];
-    });
-}
-
-// Función principal de búsqueda
-function searchTheorems() {
-    const query = searchInput.value.trim().toLowerCase();
-    resultsContainer.innerHTML = ''; // Limpiar resultados anteriores
-
-    if (query.length === 0) {
-        resultsContainer.innerHTML = '<p class="initial-message">Comienza a escribir para buscar los teoremas.</p>';
-        return;
-    }
-
-    const filteredTheorems = teoremas.filter(teorema => {
-        // Concatenar campos clave para la búsqueda
-        const searchableText = `${teorema.numero} ${teorema.nombre} ${teorema.contenido} ${teorema.demostracion || ''}`.toLowerCase();
-        
-        // Buscar por coincidencia del número de teorema O por cualquier palabra clave
-        return searchableText.includes(query);
-    });
-
-    if (filteredTheorems.length === 0) {
-        resultsContainer.innerHTML = '<p class="initial-message">No se encontraron teoremas que coincidan con su búsqueda.</p>';
-        return;
-    }
-
-    // Generar el HTML para cada teorema encontrado
-    filteredTheorems.forEach(teorema => {
-        let formulasHTML = '';
-        if (teorema.formulas.length > 0) {
-            formulasHTML = teorema.formulas.map(formula => 
-                `<div class="formula-block"><p>${formula}</p></div>`
-            ).join('');
-        }
-
-        let demostracionHTML = '';
-        if (teorema.demostracion) {
-            demostracionHTML = `
-                <div class="proof-section">
-                    <h3>Demostración:</h3>
-                    <p>${teorema.demostracion}</p>
-                </div>
-            `;
-        }
-
-        const teoremaCard = `
-            <div class="teorema-card">
-                <h2>${teorema.numero}: ${teorema.nombre}</h2>
-                <p>${teorema.contenido}</p>
-                ${formulasHTML}
-                ${demostracionHTML}
-            </div>
-        `;
-        resultsContainer.innerHTML += teoremaCard;
-    });
-
-    // Indicar a MathJax que re-procese las nuevas fórmulas añadidas al DOM
-    if (window.MathJax) {
-        MathJax.typesetPromise([resultsContainer]).catch((err) => console.log('MathJax Error:', err));
-    }
-}
-searchInput.addEventListener('input', searchTheorems);
-document.addEventListener('DOMContentLoaded', searchTheorems);
+document.addEventListener("DOMContentLoaded", () => {
+  updateStats();
+  renderInitial();
+  searchInput.addEventListener("input", search);
+});
