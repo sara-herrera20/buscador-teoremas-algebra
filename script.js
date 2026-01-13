@@ -181,7 +181,265 @@ const teoremas = [
             "$$\\vec{x}= A^{-1} \\vec{b}$$"
         ],
         demostracion: "Se verifica que $\\vec{x}= A^{-1} \\vec{b}$ es solución: $A(A^{-1} \\vec{b})= (A A^{-1})\\vec{b}=I\\vec{b} = \\vec{b}$. Para la unicidad, sea $\\vec{x}_1$ otra solución, $A\\vec{x}_1 = \\vec{b}$. Multiplicando por $A^{-1}$ a la izquierda: $A^{-1}(A\\vec{x}_1) = A^{-1}\\vec{b}$, resultando $I\\vec{x}_1 = A^{-1}\\vec{b}$, por lo que $\\vec{x}_1 = A^{-1}\\vec{b}$ y la solución es única."
+    },
+    // --- PARCIAL 2: DETERMINANTES ---
+    {
+        numero: "Teorema 2.1",
+        nombre: "Determinante de la Transpuesta",
+        categoria: "Determinantes",
+        contenido: "Si $A$ es una matriz $n \\times n$, su determinante es igual al de su transpuesta.",
+        formulas: ["$$|A| = |A^T|$$"],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.2",
+        nombre: "Renglón o Columna de Ceros",
+        categoria: "Determinantes",
+        contenido: "Si una matriz cuadrada $A$ tiene una fila o columna de ceros, su determinante es 0.",
+        formulas: ["$$\\text{det}(A) = 0$$"],
+        demostracion: null
+    },
+    {
+        numero: "P. Fundamental 1",
+        nombre: "Renglones Iguales",
+        categoria: "Determinantes",
+        contenido: "Si un determinante tiene dos renglones o columnas iguales, es igual a cero.",
+        formulas: [],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.3",
+        nombre: "Inversa mediante Adjunta",
+        categoria: "Determinantes",
+        contenido: "Si $\\text{det}(A) \\neq 0$, entonces $A$ es invertible y su inversa es:",
+        formulas: ["$$A^{-1} = \\frac{1}{\\text{det}(A)} \\text{adj}(A)$$"],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.4",
+        nombre: "Regla de Cramer",
+        categoria: "Determinantes",
+        contenido: "Para un sistema $A\\vec{x}=\\vec{b}$ con $\\text{det}(A) \\neq 0$, la solución para cada incógnita es:",
+        formulas: ["$$x_j = \\frac{\\text{det}(A_j)}{\\text{det}(A)}$$"],
+        demostracion: "$A_j$ se obtiene al sustituir la columna $j$ de $A$ por el vector $\\vec{b}$."
+    },
+    {
+        numero: "Teorema 2.5",
+        nombre: "Matrices Triangulares",
+        categoria: "Determinantes",
+        contenido: "El determinante de una matriz triangular es el producto de los elementos de su diagonal principal.",
+        formulas: ["$$\\text{det}(A) = a_{11} \\cdot a_{22} \\dots a_{nn}$$"],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.6",
+        nombre: "Operaciones Elementales",
+        categoria: "Determinantes",
+        contenido: "Efecto en el determinante:",
+        formulas: [
+            "a) Intercambio: $\\text{det}(B) = -\\text{det}(A)$",
+            "b) Multiplicación por $k$: $\\text{det}(B) = k \\cdot \\text{det}(A)$",
+            "c) Suma de múltiplo: $\\text{det}(B) = \\text{det}(A)$"
+        ],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.10",
+        nombre: "Invertibilidad y Determinante",
+        categoria: "Determinantes",
+        contenido: "$A$ es invertible si y solo si su determinante es diferente de cero.",
+        formulas: ["$$A \\text{ es invertible} \\iff \\text{det}(A) \\neq 0$$"],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.12",
+        nombre: "Determinante del Producto",
+        categoria: "Determinantes",
+        contenido: "El determinante del producto de dos matrices es el producto de sus determinantes.",
+        formulas: ["$$\\text{det}(AB) = \\text{det}(A) \\cdot \\text{det}(B)$$"],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.13",
+        nombre: "Determinante de la Inversa",
+        categoria: "Determinantes",
+        contenido: "Si $A$ es invertible, el determinante de su inversa es el recíproco de su determinante.",
+        formulas: ["$$\\text{det}(A^{-1}) = \\frac{1}{\\text{det}(A)}$$"],
+        demostracion: null
+    },
+    {
+        numero: "Formulario FMMI",
+        nombre: "Propiedades de la Adjunta",
+        categoria: "Determinantes",
+        contenido: "Propiedades útiles para exámenes:",
+        formulas: [
+            "$$|kA| = k^n |A|$$",
+            "$$|\\text{adj}(A)| = |A|^{n-1}$$",
+            "$$\\text{adj}(\\text{adj}(A)) = |A|^{n-2} A$$"
+        ],
+        demostracion: null
+    },
+
+    // --- PARCIAL 2: ESPACIOS VECTORIALES ---
+    {
+        numero: "Teorema 2.16",
+        nombre: "Criterio de Subespacio",
+        categoria: "Espacios Vectoriales",
+        contenido: "$W$ es subespacio de $V$ si cumple:",
+        formulas: [
+            "a) $\\vec{u}, \\vec{v} \\in W \\implies \\vec{u} + \\vec{v} \\in W$",
+            "b) $\\vec{u} \\in W, k \\in F \\implies k\\vec{u} \\in W$"
+        ],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.18",
+        nombre: "Conjunto Solución Homogéneo",
+        categoria: "Espacios Vectoriales",
+        contenido: "El conjunto solución de un sistema $A\\vec{x}=\\vec{0}$ siempre es un subespacio de $\\mathbb{R}^n$.",
+        formulas: [],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.19",
+        nombre: "Combinaciones Lineales",
+        categoria: "Espacios Vectoriales",
+        contenido: "El conjunto de todas las combinaciones lineales de $S$ es el subespacio más pequeño que contiene a $S$.",
+        formulas: [],
+        demostracion: null
+    },
+
+    // --- PARCIAL 2: INDEPENDENCIA Y BASES ---
+    {
+        numero: "Teorema 2.22",
+        nombre: "Vectores en R^n",
+        categoria: "Independencia y Bases",
+        contenido: "En $\\mathbb{R}^n$, si un conjunto tiene más de $n$ vectores, entonces es Linealmente Dependiente (L.D.).",
+        formulas: [],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.24",
+        nombre: "Wronskiano",
+        categoria: "Independencia y Bases",
+        contenido: "Para funciones diferenciables, si el Wronskiano es diferente de cero, las funciones son Linealmente Independientes (L.I.).",
+        formulas: ["$$W(f_1, \\dots, f_n) \\neq 0 \\implies L.I.$$"],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.25",
+        nombre: "Unicidad de la Base",
+        categoria: "Independencia y Bases",
+        contenido: "Si $B$ es base de $V$, cada vector de $V$ se expresa de forma única como combinación lineal de los vectores de la base.",
+        formulas: [],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.27",
+        nombre: "Tamaño de la Base",
+        categoria: "Independencia y Bases",
+        contenido: "Todas las bases de un espacio vectorial de dimensión finita tienen exactamente el mismo número de vectores.",
+        formulas: [],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.29",
+        nombre: "Atajo de Dimensión n",
+        categoria: "Independencia y Bases",
+        contenido: "En un espacio de dimensión $n$, un conjunto de exactamente $n$ vectores es base si es L.I. o si genera el espacio.",
+        formulas: [],
+        demostracion: null
+    },
+    {
+        numero: "Teorema 2.31",
+        nombre: "Dimensión del Subespacio",
+        categoria: "Independencia y Bases",
+        contenido: "Si $W$ es subespacio de $V$, entonces $\\text{dim}(W) \\leq \\text{dim}(V)$. Si las dimensiones son iguales, $W=V$.",
+        formulas: [],
+        demostracion: null
     }
+];
+
+const searchInput = document.getElementById('searchInput');
+const resultsContainer = document.getElementById('resultsContainer');
+const statsEl = document.getElementById('stats');
+
+// Mostrar total de teoremas
+function updateStats() {
+    statsEl.innerText = `${teoremas.length} Teoremas en la base de datos`;
+}
+
+// Función para asignar color por categoría
+function getCategoryClass(cat) {
+    const maps = {
+        "Matrices": "cat-matrices",
+        "Determinantes": "cat-determinantes",
+        "Espacios Vectoriales": "cat-espacios",
+        "Independencia y Bases": "cat-independencia",
+        "Invertibilidad": "cat-matrices"
+    };
+    return maps[cat] || "";
+}
+
+function search() {
+    const query = searchInput.value.trim().toLowerCase();
+    resultsContainer.innerHTML = '';
+
+    if (query === "") {
+        resultsContainer.innerHTML = `
+            <div class="initial-message">
+                <p>Escribe el número del teorema o conceptos clave (ej: "inversa", "cramer") para buscar.</p>
+            </div>
+        `;
+        return;
+    }
+
+    const filtered = teoremas.filter(t => {
+        const text = `${t.numero} ${t.nombre} ${t.contenido} ${t.categoria}`.toLowerCase();
+        return text.includes(query);
+    });
+
+    if (filtered.length === 0) {
+        resultsContainer.innerHTML = `<p class="initial-message">No se encontraron teoremas para "${query}"</p>`;
+        return;
+    }
+
+    filtered.forEach(t => {
+        const card = document.createElement('div');
+        card.className = 'teorema-card';
+
+        const formulasHTML = t.formulas.map(f => `<div class="formula-block">${f}</div>`).join('');
+        const proofHTML = t.demostracion ? `
+            <div class="proof-section">
+                <h3>Nota / Demostración</h3>
+                <p>${t.demostracion}</p>
+            </div>
+        ` : '';
+
+        card.innerHTML = `
+            <div class="card-header">
+                <span class="teorema-num">${t.numero}</span>
+                <span class="teorema-cat ${getCategoryClass(t.categoria)}">${t.categoria}</span>
+            </div>
+            <h2>${t.nombre}</h2>
+            <p>${t.contenido}</p>
+            ${formulasHTML}
+            ${proofHTML}
+        `;
+        resultsContainer.appendChild(card);
+    });
+
+    // Indicar a MathJax que re-procese las fórmulas
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        MathJax.typesetPromise([resultsContainer]);
+    }
+}
+
+searchInput.addEventListener('input', search);
+window.onload = () => {
+    updateStats();
+    search();
+};
 ];
 
 const searchInput = document.getElementById('searchInput');
@@ -258,9 +516,5 @@ function searchTheorems() {
         MathJax.typesetPromise([resultsContainer]).catch((err) => console.log('MathJax Error:', err));
     }
 }
-
-// Escuchar el evento de entrada para realizar la búsqueda en tiempo real
 searchInput.addEventListener('input', searchTheorems);
-
-// Realizar una búsqueda inicial al cargar para mostrar el mensaje de inicio
 document.addEventListener('DOMContentLoaded', searchTheorems);
